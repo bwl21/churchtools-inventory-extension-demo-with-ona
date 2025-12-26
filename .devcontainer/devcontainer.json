@@ -12,7 +12,7 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "apt-get update && apt-get install -y ripgrep && npm install",
+	"postCreateCommand": "sudo apt-get update && sudo apt-get install -y ripgrep && npm install",
 
 	// Configure tool-specific properties.
 	// Uncomment to install VS Code extensions for vue, tailwind and prettier.
@@ -29,6 +29,9 @@
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
 
-	// Disable IPv6 to avoid issues with vite dev, see https://github.com/vitejs/vite/issues/16522#issuecomment-2084322973
-	"runArgs": [ "--sysctl", "net.ipv6.conf.all.disable_ipv6=1"]
+	// Set DNS_ORDER to avoid IPv6 issues with vite dev
+	// See https://github.com/vitejs/vite/issues/16522
+	"containerEnv": {
+		"NODE_OPTIONS": "--dns-result-order=ipv4first"
+	}
 }
