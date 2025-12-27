@@ -1,3 +1,5 @@
+# this repo was for test purposes only it is not maintained
+
 # ChurchTools Inventory Extension
 
 A demo/experimental inventory management module for [ChurchTools](https://www.church.tools/) that enables churches to track physical assets, equipment, and supplies directly within their ChurchTools instance.
